@@ -18,6 +18,8 @@ app.get('/cart', function(req, res){
 	res.render('cart/cartlist', { products: products
 	});
 });
+
+// Bài 3 
 app.get('/cart/search', function(req, res){
 	var q =  req.query.q;
 	var filted = products.filter(function(item){
@@ -25,9 +27,6 @@ app.get('/cart/search', function(req, res){
 	});
 	res.render('cart/cartlist', { products: filted });
 });
-// Bài 3 
-
-
 app.listen(port, function(){
 	console.log('Server Start in port: '+ port);
 });
