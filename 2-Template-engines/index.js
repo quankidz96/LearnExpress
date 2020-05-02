@@ -2,7 +2,8 @@ const express = require('express');
 //req.body midleware
 var bodyParser = require('body-parser');
 
-var cartRoute = require('./routes/cart');
+var cartRouter = require('./routes/cart.route');
+
 var app = express();
 var port = 3000;
 
@@ -18,7 +19,7 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
-app.use('/cart', cartRoute);
+app.use('/cart', cartRouter);
 // POST
 
 app.listen(port, function(){
