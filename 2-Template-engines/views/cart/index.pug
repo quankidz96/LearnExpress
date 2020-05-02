@@ -1,12 +1,17 @@
-h1 ListProduct
+extends ../layouts/common
+block content
 
-a(href="/cart/create") AddProduct
-form(action="/cart/search", method="GET")
-    input(type="text", name="q" ,value= queryText)
-    button Search
-ul
-    each product in products
-        li
-            span= product.name 
-            span &nbsp
-            a(href="/cart/view/" + product.id) view
+    h1 ListProduct
+
+    a(href="/cart/create") AddProduct
+
+    form(action="/cart/search", method="GET")
+        input(type="text", name="q" ,value= queryText)
+        button.btn.btn-primary Search
+
+    ul
+        each product in products
+            li
+                span= product.name 
+                span &nbsp
+                a(href="/cart/view/" + product.id) view
